@@ -2,69 +2,38 @@ import React, {Component} from 'react';
 import './Header.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import Headroom from 'react-headroom';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 
 class Header extends Component {
     render() {
         return (
             <Headroom>
-                <header className="header">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-2">
-                                <a>
-                                    <img className="logo" alt="" src={require('./logo.png')} width="1000px" height="400px"></img>
-                                </a>
-                            </div>
+                <Navbar collapseOnSelect expand="lg" bg="light">
+                    <Navbar.Brand href="#home" className="col-2">
+                        <img className="d-inline-block align-top logo" alt="CONE logo" src={require('./logo.png')}></img>
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className="col-10 justify-content-around">
+                            <Nav.Link href="#features">About Us</Nav.Link>
+                            <Nav.Link href="#pricing">Pricing</Nav.Link>
+                            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+                                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                            </NavDropdown>
+                        </Nav>
+                        <Nav className="col-2">
+                            <Nav.Link href="#deets">More deets</Nav.Link>
+                            <Nav.Link eventKey={2} href="#memes">
+                                Dank memes
+                            </Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Navbar>;
 
-                            <div className="col-8">
-                                <ul className="nav justify-content-around">
-                                    <li className="nav-item">
-                                        About Us
-                                    </li>
-                                    <li className="nav-item">
-                                        Events
-                                    </li>
-                                    <li className="nav-item">
-                                        Projects
-                                    </li>
-                                    <li className="nav-item">
-                                        Get Involved
-                                    </li>
-                                    <li className="nav-item">
-                                        <a>
-                                            <FontAwesomeIcon icon="search"/>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div className="col-2">
-                                <ul className="nav justify-content-end">
-                                    <li className="nav-item">
-                                        <a>
-                                            <FontAwesomeIcon icon={["fab", "facebook"]}/>
-                                        </a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a>
-                                            <FontAwesomeIcon icon={["fab", "twitter"]}/>
-                                        </a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a>
-                                            <FontAwesomeIcon icon={["fab", "youtube"]}/>
-                                        </a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a>
-                                            <FontAwesomeIcon icon={["fab", "instagram"]}/>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </header>
             </Headroom>
         );
     }
