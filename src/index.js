@@ -13,7 +13,6 @@ import FAQ from './scenes/FAQ/FAQ';
 import AboutUs from './scenes/AboutUs/AboutUs';
 import Dashboard from './scenes/Dashboard/Dashboard';
 
-
 library.add(fab, faSearch);
 
 ReactDOM.render((
