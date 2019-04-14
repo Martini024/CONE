@@ -11,12 +11,7 @@ class Main extends Component {
         return (
             <div>
                 <Latest />
-                <div className="container">
-                    <div className="row">
-                        <ExternalLink />
-                        <ExternalLink />
-                    </div>
-                </div>
+                <ExternalLink />
                 <Upcoming />
                 <CoreProject />
                 <Supporter />

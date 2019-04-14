@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import './Header.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import Headroom from 'react-headroom';
 import { Col, Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import './Header.css';
 
 class Header extends Component {
     render() {
